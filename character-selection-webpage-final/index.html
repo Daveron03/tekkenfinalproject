@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tekken - Fighter Selection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="background-overlay"></div>
+        
+        <div class="auth-section" id="authSection">
+            <div class="auth-container">
+                <h1 class="auth-title">TEKKEN ARENA</h1>
+                <div class="auth-tabs">
+                    <button class="auth-tab active" id="loginTab">LOGIN</button>
+                    <button class="auth-tab" id="registerTab">REGISTER</button>
+                </div>
+                
+                <form class="auth-form" id="loginForm">
+                    <div class="input-group">
+                        <input type="email" id="loginEmail" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="loginPassword" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="auth-btn">LOGIN</button>
+                </form>
+                
+                <form class="auth-form hidden" id="registerForm">
+                    <div class="input-group">
+                        <input type="text" id="registerName" placeholder="Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="registerEmail" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="registerPassword" placeholder="Password" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="registerPasswordConfirm" placeholder="Confirm Password" required>
+                    </div>
+                    <button type="submit" class="auth-btn">REGISTER</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="main-section hidden" id="mainSection">
+            <div class="header-section">
+                <div class="title-section">
+                    <h1 class="main-title">FIGHTERS</h1>
+                </div>
+                <div class="user-section">
+                    <span class="welcome-text">Welcome, <span id="userName"></span></span>
+                    <button class="logout-btn" id="logoutBtn">LOGOUT</button>
+                </div>
+            </div>
+            
+            <div class="character-selection" id="characterSelection"></div>
+        </div>
+
+       
+        <div class="character-modal" id="characterModal" style="display:none;">
+            <div class="modal-content">
+                <button class="close-btn" id="closeModal">✕</button>
+                <div class="modal-left">
+                    <div class="character-info-section">
+                        <h1 id="modalName" class="modal-character-name"></h1>
+                        <p id="modalTagline" class="modal-tagline"></p>
+                        <div class="modal-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Country of origin:</span>
+                                <span id="modalCountry" class="detail-value"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Fighting style:</span>
+                                <span id="modalStyle" class="detail-value"></span>
+                            </div>
+                        </div>
+                        <div class="modal-description">
+                            <p id="modalDescription"></p>
+                        </div>
+                        <div class="modal-actions">
+                            <button class="favorite-btn" id="favoriteBtn">
+                                <span class="fist-icon">⭐</span>
+                                <span id="favoriteText">ADD TO FAVORITES</span>
+                            </button>
+                            <button class="back-btn" id="backBtn">BACK TO SELECTION</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <div class="modal-character-image">
+                        <img id="modalImage" src="" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="config.js"></script>
+    <script src="utils.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
